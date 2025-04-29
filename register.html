@@ -15,6 +15,7 @@
     </header>
 
     <main>
+        <p><strong>Note:</strong> For May, you can register only for <span style="color:green;">May 7</span> and <span style="color:green;">May 28</span> at Vola Club. For all other months, you can register for <span style="color:green;">Fridays and Saturdays</span>.</p>
         <form id="eventForm">
             <label for="name">Full Name:</label>
             <input type="text" id="name" required>
@@ -36,19 +37,25 @@
     <script src="js/nav.js"></script>
     <script src="js/script.js"></script>
     <script>
-     const availableDates = ["07-05-2025", "28-05-2025"];
+     const mayDates = ["07-05-2025", "28-05-2025"];
 
 function available(date) {
     let dmy = ("0" + date.getDate()).slice(-2) + "-" +
               ("0" + (date.getMonth() + 1)).slice(-2) + "-" +
               date.getFullYear();
-    return [availableDates.includes(dmy)];
+    // If month is May (month 4 in JS)
+    if (date.getMonth() === 4 && date.getFullYear() === 2025) {
+        return [mayDates.includes(dmy)];
+    } else {
+        // For other months, allow only Fridays (5) and Saturdays (6)
+        return [(date.getDay() === 5 || date.getDay() === 6)];
+    }
 }
 
 $("#event-date").datepicker({
     dateFormat: "dd-mm-yy",
-    minDate: new Date(2025, 4, 7),   // May is month 4 in JS (0-indexed)
-    maxDate: new Date(2025, 4, 28),
+    minDate: new Date(2025, 0, 1),
+    maxDate: new Date(2025, 11, 31),
     beforeShowDay: available
 });
     </script>
