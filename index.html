@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Community Event Hub</title>
+
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Slick slider CSS for homepage event carousel -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+</head>
+<body>
+    <!-- Header with dynamic navigation bar -->
+    <header>
+        <h1>Welcome to Community Event Hub</h1>
+        <div id="navbar"></div>
+    </header>
+
+    <main>
+        <!-- Section for event announcement -->
+        <section>
+            <h2>Upcoming Events</h2>
+            <p>Join us for exciting nights every weekend in Ankara.</p>
+        </section>
+
+        <!-- Section introducing the developer -->
+        <section>
+            <h2>About the Developer</h2>
+            <p><strong>Name:</strong> Amro Ahmed Abdalla Ismail</p>
+            <p><strong>Student Number:</strong> 20050141027</p>
+            <p><strong>Department:</strong> Computer Engineering</p>
+        </section>
+
+        <!-- Section for Slick Slider event carousel -->
+        <section>
+            <h2>🎧 Featured Events</h2>
+            <div class="event-slider">
+                <!-- Each div represents one image in the carousel -->
+                <div><img src="images/IMG_8852.jpeg" alt="Afro Night at Kite"></div>
+                <div><img src="images/IMG_8853.jpeg" alt="International Saturday"></div>
+                <div><img src="images/IMG_8854.jpeg" alt="Afro Wednesdays at Puhu"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Community Event Hub</p>
+    </footer>
+
+    <!-- jQuery for Slick carousel -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Slick slider JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <!-- Initialize the event slider -->
+    <script>
+        $(document).ready(function(){
+            $('.event-slider').slick({
+                autoplay: true,
+                autoplaySpeed: 3000,
+                arrows: true,
+                dots: true
+            });
+        });
+    </script>
+
+    <!-- Navigation loader -->
+    <script src="js/nav.js"></script>
+</body>
+</html>

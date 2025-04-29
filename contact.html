@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register - Community Event Hub</title>
+
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- jQuery UI Datepicker widget theme -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+<body>
+    <!-- Header with navigation bar -->
+    <header>
+        <h1>Register for an Event</h1>
+        <div id="navbar"></div> <!-- Loaded dynamically via nav.js -->
+    </header>
+
+    <main>
+        <!-- Registration form section -->
+        <section>
+            <form id="registerForm">
+                <!-- Full name input -->
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <!-- Email input -->
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <!-- Date input with datepicker -->
+                <label for="date">Event Date:</label>
+                <input type="text" id="date" name="date" required>
+
+                <!-- Submit button -->
+                <button type="submit">Register</button>
+            </form>
+
+            <!-- Message response shown after submission -->
+            <div id="responseMessage" style="display:none; margin-top: 20px; color: green;"></div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Community Event Hub</p>
+    </footer>
+
+    <!-- jQuery + jQuery UI for datepicker -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- jQuery Validation plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+
+    <!-- Dynamic navigation bar -->
+    <script src="js/nav.js"></script>
+
+    <!-- Form validation and datepicker logic -->
+    <script>
+        $(function () {
+            // Enable datepicker for date input
+            $("#date").datepicker({
+                dateFormat: "mm/dd/yy",
+                minDate: 0
+            });
+
+            // Form validation using jQuery Validate plugin
+            $("#registerForm").validate();
+
+            // Show message after successful form submit
+            $("#registerForm").on("submit", function (e) {
+                e.preventDefault();
+
+                if ($(this).valid()) {
+                    let name = $("#name").val();
+                    $("#responseMessage").html("✅ Thank you for registering, " + name + "!").fadeIn();
+                    this.reset();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

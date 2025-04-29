@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery - Community Event Hub</title>
+
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Lightbox2 CSS for popup image viewer -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header with navigation bar -->
+    <header>
+        <h1>Event Gallery - DJ MILKSHAKE</h1>
+        <div id="navbar"></div> <!-- Navigation loaded dynamically -->
+    </header>
+
+    <main>
+        <!-- Section containing gallery images -->
+        <section>
+            <h2>Photos from Past Events</h2>
+            <div class="gallery">
+                <!-- Each image is wrapped in a Lightbox-enabled anchor -->
+                <a href="images/IMG_8852.jpeg" data-lightbox="gallery" data-title="Afro Night at Kite">
+                    <img src="images/IMG_8852.jpeg" alt="Afro Night">
+                </a>
+                <a href="images/IMG_8853.jpeg" data-lightbox="gallery" data-title="International Night at Kite">
+                    <img src="images/IMG_8853.jpeg" alt="International Night">
+                </a>
+                <a href="images/IMG_8854.jpeg" data-lightbox="gallery" data-title="Afro Wednesdays at Puhu">
+                    <img src="images/IMG_8854.jpeg" alt="Puhu Event">
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer section -->
+    <footer>
+        <p>© 2025 Community Event Hub</p>
+    </footer>
+
+    <!-- Lightbox2 JavaScript for image popup -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+    <!-- Navigation bar loader -->
+    <script src="js/nav.js"></script>
+</body>
+</html>
